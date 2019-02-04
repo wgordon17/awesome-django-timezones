@@ -1,0 +1,4 @@
+ipapi>=0.5
+django>=2.1
+
+# Additional requirements go here
