@@ -8,7 +8,7 @@ To use Awesome Django Timezones in a project, add it to your ``INSTALLED_APPS``:
 
     INSTALLED_APPS = (
         ...
-        'awesome_django_timezones.apps.DjangoTimezonesConfig',
+        'awesome_django_timezones',
         ...
     )
 
