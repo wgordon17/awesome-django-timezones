@@ -36,7 +36,7 @@ class TimezonesMiddleware:
                 # attempt to activate the timezone - this might be an invalid timezone
                 timezone.activate(pytz.timezone(tz))
             except (pytz.UnknownTimeZoneError, AttributeError):
-                timezone.deactivate()
+                timezone.activate(get_default_tz())
 
         response = self.get_response(request)
 
@@ -85,3 +85,17 @@ def get_ip_address(request):
                 break
 
     return ip
+
+
+def get_default_tz():
+    if hasattr(settings, 'AWESOME_TZ_DEFAULT_TZ'):
+        return settings.AWESOME_TZ_DEFAULT_TZ
+    else:
+        if hasattr(settings, 'TIME_ZONE'):
+            tz = settings.TIME_ZONE
+        else:
+            tz = 'UTC'
+        try:
+            return pytz.timezone(tz)
+        except (pytz.UnknownTimeZoneError, AttributeError):
+            return pytz.utc
