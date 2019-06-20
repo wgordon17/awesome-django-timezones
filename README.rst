@@ -84,8 +84,7 @@ Features
   * Relies on third-party IP API lookups by https://ipapi.co. Consider purchasing a plan if you need more than 30k IP lookups/month or
     if you need support (no affiliation).
 
-* Set a fallback timezone to always use in case a timezone can't be found with ``AWESOME_TZ_DEFAULT_TZ`` in your ``settings.py``.
-    (Be sure to use the "TZ database name" column from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
+* Set a fallback timezone to always use in case a timezone can't be found with ``AWESOME_TZ_DEFAULT_TZ`` in your ``settings.py``. (Be sure to use the "TZ database name" column from https://en.wikipedia.org/wiki/List_of_tz_database_time_zones)
 
 Running Tests
 -------------
