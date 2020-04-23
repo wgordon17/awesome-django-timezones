@@ -49,7 +49,7 @@ Add ``js/awesome_django_timezones.js`` to your base template
 
 .. code-block:: html
 
-    <script src="{% static 'awesome_django_timezones/js/awesome_django_timezones.js' %}"></script>
+    <script src="{% static 'js/awesome_django_timezones.js' %}"></script>
 
 (Optional) If you need Django to be timezone aware on the Admin page, you will have to extend the
 Admin ``base.html`` in ``your_project/templates/admin/base.html``
