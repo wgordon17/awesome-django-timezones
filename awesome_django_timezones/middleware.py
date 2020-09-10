@@ -28,9 +28,11 @@ class TimezonesMiddleware:
                 # cookie timezones are URI encoded
                 tz = unquote(tz)
             else:
-                # no cookie set, use IP API to lookup timezone and use that to set the cookie
-                ip_info = ipapi.location(ip=get_ip_address(request), key=getattr(settings, 'DJANGO_IPAPI_KEY', None))
-                tz = ip_info.get('timezone', None)
+                ipapi_disabled = getattr(settings, 'DJANGO_IPAPI_DISABLED', False)
+                if not ipapi_disabled:
+                    # no cookie set, use IP API to lookup timezone and use that to set the cookie
+                    ip_info = ipapi.location(ip=get_ip_address(request), key=getattr(settings, 'DJANGO_IPAPI_KEY', None))
+                    tz = ip_info.get('timezone', None)
 
             try:
                 # attempt to activate the timezone - this might be an invalid timezone
