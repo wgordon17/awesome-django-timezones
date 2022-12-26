@@ -1,7 +1,7 @@
 -r requirements.txt
 
 bumpversion==0.5.3
-wheel==0.32.3
+wheel==0.38.1
 sphinx==1.8.4
 sphinx_rtd_theme==0.4.2
 twine==1.12.1
